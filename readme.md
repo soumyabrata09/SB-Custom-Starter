@@ -24,7 +24,30 @@ After successful build add the following dependency into your Reference Applicat
     <artifactId>cryptography-starter</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 ````
-_TODO_
+
+**Jfrog Integration**
+````
+<!--Jfrog artifactory integration-->
+	<distributionManagement>
+		<repository>
+			<id>central</id>
+			<name>a0guqxkvavcvp-artifactory-primary-0-releases</name>
+			<url>https://soumyabrata09.jfrog.io/artifactory/sam09-libs-release</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>a0guqxkvavcvp-artifactory-primary-0-snapshots</name>
+			<url>https://soumyabrata09.jfrog.io/artifactory/sam09-libs-snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
+````
+
+**To publish artifact to jfrog**
+> mvn clean install deploy 
+> Snapshots will be published to ( https://soumyabrata09.jfrog.io/artifactory/sam09-libs-snapshot/com/sam09/lib/cryptography-starter/)
+
+
+_Action Items_
  - [x] Create a Generic SLF4J logger which can be inject to gereric bean generator and can be used across the project 
  - [x] Onboard the artifact onto Jfrog/Nexus
  
